@@ -12,7 +12,8 @@ const isLogged = (req, res, next) => {
 router.get('/logged', isLogged, (req, res) => {
   console.log("user", req.user);
   res.render('logged', {
-  //  ?
+    name: req.user.displayName,
+    avatar: req.user.photos[0].value,
   });
 });
 
